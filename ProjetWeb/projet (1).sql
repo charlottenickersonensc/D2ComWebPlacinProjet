@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 12 mai 2025 à 13:00
+-- Généré le : lun. 12 mai 2025 à 12:24
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `prof_classes_matieres` (
   KEY `prof_classes_matieres_ibfk_1` (`id_user`),
   KEY `id_classe` (`id_classe`),
   KEY `id_matiere` (`id_matiere`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `prof_classes_matieres`
