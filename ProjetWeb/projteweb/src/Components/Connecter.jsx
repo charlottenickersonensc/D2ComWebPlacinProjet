@@ -20,7 +20,7 @@ function Connecter() {
     function submit(e) {
         e.preventDefault();
 
-        fetch('http://localhost/ProjetWeb/login.php', {
+        fetch('https://ahadi.zzz.bordeaux-inp.fr/backend/login.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

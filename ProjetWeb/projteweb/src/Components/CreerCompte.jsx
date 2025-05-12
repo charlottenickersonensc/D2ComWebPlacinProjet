@@ -12,7 +12,7 @@ function CreerCompte() {
     const [json, setJson] = useState({classes: [], matieres: []});
     useEffect(() => {
         const fetchData = async() => {
-            let data = await fetch('http://localhost/ProjetWeb/envoieMatiereClasse.php')
+            let data = await fetch(' https://ahadi.zzz.bordeaux-inp.fr/backend/envoieMatiereClasse.php')
             let reponse = await data.json()
             setJson(reponse)
         }
@@ -41,7 +41,7 @@ function CreerCompte() {
 
         setErreur(false);
 
-        fetch('http://localhost/ProjetWeb/users.php', {
+        fetch(' https://ahadi.zzz.bordeaux-inp.fr/backend/users.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `nom=${encodeURIComponent(infos.nom)}&prenom=${encodeURIComponent(infos.prenom)}&email=${encodeURIComponent(infos.email)}&mdp=${encodeURIComponent(infos.mdp1)}&role=${encodeURIComponent(infos.role)}&classe=${encodeURIComponent(infos.classe)}&pairs=${encodeURIComponent(JSON.stringify(infos.pairs))}`

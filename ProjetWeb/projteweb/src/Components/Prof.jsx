@@ -33,12 +33,12 @@ function Prof() {
     };
 
     const saveNote = (note, id_matiere) => {
-        fetch('http://localhost/ProjetWeb/changerNote.php', {
+        fetch('https://ahadi.zzz.bordeaux-inp.fr/backend/changerNote.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `email=${encodeURIComponent(note.email)}&note=${encodeURIComponent(note.note)}&commentaire=${encodeURIComponent(note.commentaire || '')}&id_matiere=${id_matiere}`
         })
-        .then(() => setMessage('✅ Note mise à jour'))
+        .then(() => setMessage(' Note mise à jour'))
         .catch(() => setMessage('❌ Erreur lors de la mise à jour'));
     };
 
@@ -52,11 +52,11 @@ function Prof() {
     const addNote = (key, id_matiere) => {
         const note = newNotes[key];
         if (!note || !note.email || !note.note) {
-            setMessage("⚠️ Remplissez tous les champs");
+            setMessage(" Remplissez tous les champs");
             return;
         }
-
-        fetch('http://localhost/ProjetWeb/addNote.php', {
+        
+        fetch('https://ahadi.zzz.bordeaux-inp.fr/backend/addNote.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `email=${encodeURIComponent(note.email)}&note=${encodeURIComponent(note.note)}&commentaire=${encodeURIComponent(note.commentaire || '')}&id_matiere=${id_matiere}`
@@ -68,7 +68,7 @@ function Prof() {
                 ...prev,
                 [key]: { nom: '', prenom: '', note: '', commentaire: '', email: '' }
             }));
-            setMessage('✅ Note ajoutée');
+            setMessage(' Note ajoutée');
         })
         .catch(() => setMessage("❌ Erreur lors de l'ajout"));
     };
