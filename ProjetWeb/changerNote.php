@@ -10,7 +10,7 @@ $email_eleve = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : null
 $id_matiere = isset($_POST['id_matiere']) ? htmlspecialchars($_POST['id_matiere']) : null;
 $date = date('Y-m-d');
 
-if (empty($note) || empty($email_eleve) || empty($id_matiere))
+if ((empty($note) && empty($commentaire)) || empty($email_eleve) || empty($id_matiere))
 {
     echo json_encode(["message" => "❌ Données manquantes", "note" => $note, "email" => $email_eleve, "id_matiere" => $id_matiere]);
     exit;
